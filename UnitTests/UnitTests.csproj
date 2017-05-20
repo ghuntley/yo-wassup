@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{C52BA0A9-8277-4AE2-8B87-9245674A71DB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>ReactiveSearch.UnitTests</RootNamespace>
+    <AssemblyName>ReactiveSearch.UnitTests</AssemblyName>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DISCONNECTED|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DISCONNECTED\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DISCONNECTED_ERRORS|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DISCONNECTED_ERRORS\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DISCONNECTED_FAST|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DISCONNECTED_FAST\</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AkavacheSqliteLinkerOverride.cs" />
+    <Compile Include="BuilderExtensions.cs" />
+    <Compile Include="Services\State\StateKeysTests.cs" />
+    <Compile Include="IBuilder.cs" />
+    <Compile Include="..\CommonAssemblyInfo.cs" />
+    <Compile Include="ReactiveUI\Mocks\ScreenMock.cs" />
+    <Compile Include="ReactiveUI\Scheduler\Mocks\SchedulerMock.cs" />
+    <Compile Include="Services\State\Builders\StateServiceBuilder.cs" />
+    <Compile Include="Services\State\Mocks\StateServiceMock.cs" />
+    <Compile Include="Services\State\Mocks\BlobCacheMock.cs" />
+    <Compile Include="UnitTestsAssembly.cs" />
+    <Compile Include="Utility\System\DateExtensionsFixtures.cs" />
+    <Compile Include="Utility\System\StringExtensionsFixtures.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{A76DC2A7-724C-4DA9-8358-DFA012726FF8}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services\Services.csproj">
+      <Project>{41A3AF92-317A-4EA3-B048-5F6FD8D66944}</Project>
+      <Name>Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Services.Connected\Services.Connected.csproj">
+      <Project>{30F3A58D-E524-4899-96D3-5F4B9BEB8BF5}</Project>
+      <Name>Services.Connected</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitTests.Utility\UnitTests.Utility.csproj">
+      <Project>{16E3222D-3400-4D4F-AF7C-7308A493C2F6}</Project>
+      <Name>UnitTests.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\Search\" />
+    <Folder Include="Features\Settings\" />
+    <Folder Include="Features\WebBrowser\" />
+    <Folder Include="Properties\" />
+    <Folder Include="Services\Api\" />
+    <Folder Include="Services\NetworkConnectivity\" />
+    <Folder Include="Services\Search\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mocks.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+</Project>

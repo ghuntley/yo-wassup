@@ -1,0 +1,22 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "akavache": "5.0.0",
+    "Fusillade": "0.7.0",
+    "Genesis.Ensure": "2.0.0",
+    "httpclientdiagnostics": "1.1.1.1462518862",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.1",
+    "reactiveui": "7.3.0",
+    "refit": "3.0.1",
+    "System.Collections.Immutable": "1.3.1",
+    "Xam.Plugin.Connectivity": "2.3.0"
+  },
+  "frameworks": {
+    "netstandard1.4": {
+      "imports": [
+        "portable-net45+win8+wpa81+wp8"
+      ]
+    }
+  }
+}

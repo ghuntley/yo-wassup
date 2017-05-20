@@ -1,0 +1,19 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "akavache": "5.0.0",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.1",
+    "Splat": "1.6.2",
+    "system.componentmodel": "4.3.0",
+    "System.Diagnostics.Contracts": "4.3.0",
+    "System.security.principal": "4.3.0"
+  },
+  "frameworks": {
+    "netstandard1.4": {
+      "imports": [
+        "portable-net45+wp80+win8+wpa81"
+      ]
+    }
+  }
+}

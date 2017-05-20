@@ -1,0 +1,17 @@
+﻿{
+  "supports": {},
+  "dependencies": {
+    "akavache": "5.0.0",
+    "Microsoft.NETCore.Portable.Compatibility": "1.0.1",
+    "NETStandard.Library": "1.6.1",
+    "reactiveui": "7.3.0",
+    "Xam.Plugin.Connectivity": "2.3.0"
+  },
+  "frameworks": {
+    "netstandard1.4": {
+      "imports": [
+        "portable-net45+wp80+win8+wpa81"
+      ]
+    }
+  }
+}
